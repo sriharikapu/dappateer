@@ -1,0 +1,37 @@
+{
+  "name": "@sriharikapu/dappeteer",
+  "version": "3.0.0",
+  "description": "E2E testing for dApps using Puppeteer + MetaMask",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "metamask",
+    "dist"
+  ],
+  "scripts": {
+    "postinstall": "npx rimraf node_modules/**/**/.git",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "mocha -r ts-node/register test/test.ts --timeout=200000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sriharikapu/dappateer.git"
+  },
+  "keywords": [
+    "e2e",
+    "testing",
+    "metamask",
+    "puppeteer",
+    "dapp",
+    "ethereum"
+  ],
+  "author": "Srihari Kapu <sri@sriharikapu.com>",
+  "license": "CC-BY-1.0",
+  "devDependencies": {
+    "@types/node": "14.14.31"
+  },
+  "dependencies": {
+    "puppeteer": "^8.0.0"
+  }
+}

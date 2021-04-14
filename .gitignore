@@ -1,0 +1,9 @@
+*DS_Store
+node_modules
+test/server/data.js
+build
+dist
+yarn.lock
+.vscode/
+.idea/
+dist/
