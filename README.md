@@ -2,7 +2,7 @@
 
 E2E testing for dApps using Puppeteer + MetaMask
 
-Supports Latest Metamask Version `9.3.0`
+Supports Latest `Metamask Version 9.3.0`
 
 ## Installation
 
@@ -20,9 +20,11 @@ async function main() {
   const browser = await dappeteer.launch(puppeteer)
   const metamask = await dappeteer.getMetamask(browser)
 
-  // create or import an account
-  // await metamask.createAccount()
-  await metamask.importAccount('already turtle birth enroll since...')
+  // create or import a private key
+  await metamask.importPK('fa21...213da2b')
+  
+  // switch to imported account
+  await metamask.switchAccount(index);
 
   // you can change the network if you want
   await metamask.switchNetwork('ropsten')
@@ -50,10 +52,6 @@ main()
 
 - `dappeteer.getMetaMask(browser)`: returns a promise that resolves to an object that allows you to interact with MetaMask by using the following methods:
 
-  - `metamask.createAccount([password])`: it commands MetaMask to create a new account, it resolves when it's done. It can only be used while you haven't signed in yet, otherwise it throws. The password is optional, it defaults to `password1234`.
-
-  - `metamask.importAccount(seed[, password])`: it commands MetaMask to import an account, you need to provide the twelve words seed. It can only be used while you haven't signed in yet, otherwise it throws. The password is optional, it defaults to `password1234`.
-
   - `metamask.switchAccount(accountIndex)`: it commands MetaMask to switch to a different account, by passing the index/position of the account in the accounts list.
 
   - `metamask.importPK(privateKey)`: it commands MetaMask to import an private key. It can only be used while you haven't signed in yet, otherwise it throws.
@@ -71,3 +69,5 @@ main()
   - `metamask.sign()`: commands MetaMask to sign a message. For this to work MetaMask must be in a sign confirmation state.
   
   - `metamask.approve({ allAccounts })`: confirm Dapp permissions to use Metamask account. If you plan to use the Dapp with multiple accounts you can use `allAccounts` to add permission to all imported accounts. By default is false
+
+  
