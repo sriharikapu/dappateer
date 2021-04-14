@@ -1,6 +1,6 @@
 {
   "name": "@sriharikapu/dappeteer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "E2E testing for dApps using Puppeteer + MetaMask",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,7 +12,8 @@
     "postinstall": "npx rimraf node_modules/**/**/.git",
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "mocha -r ts-node/register test/test.ts --timeout=200000 --exit"
+    "test": "mocha -r ts-node/register test/test.ts --timeout=200000 --exit",
+    "pub": "npm version patch --force && npm publish"
   },
   "repository": {
     "type": "git",
