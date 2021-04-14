@@ -2,6 +2,8 @@
 
 E2E testing for dApps using Puppeteer + MetaMask
 
+Supports Latest Metamask Version `9.3.0`
+
 ## Installation
 
 ```
